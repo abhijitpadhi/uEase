@@ -9814,3 +9814,19 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+/*My code follows*/
+
+.icon {
+  font-size: 50px;
+  margin: auto;
+}
+
+.col {
+  border-right: ; 
+
+}
+
+.item {
+  border-radius: round; 
+}

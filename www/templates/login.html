@@ -1,0 +1,59 @@
+<ion-view hide-back-button="true" view-title="uEase" >
+	<ion-content>
+		I will do something cool soon engough!
+		<form name="loginForm" class="list list-inset" ng-controller="LoginCtrl" ng-submit="loginForm.$valid && LoginCtrl.logIn(user)" novalidate>
+			<label class="item item-input">
+				<input type="text" ng-model="LoginCtrl.user.CustomerID" placeholder="Customer ID (12 Digit)" required >
+			</label>
+			
+			<label class="item item-input">
+				<input type="Password" ng-model="LoginCtrl.user.password" placeholder="Password" required>
+			</label>
+			<!--
+			<label class="item item-input">
+				<input type="submit" value="Submit">
+			</label>
+			-->	
+			<div>loginForm is {{loginForm.$valid}}</div>
+			
+			<button class="button button-block button-positive">LOGIN</button>			
+
+			<!--
+			<button class="button button-block button-positive" ng-click="signIn(user)">LOGIN</button>
+			-->
+			<p class="text-center">
+				<a>Forget Password</a>
+			</p>
+		</form>
+		
+		<div class="row">
+			<div class="col col-33">
+				<i class="icon ion-person-add"></i><br>
+				<a> OPEN RESIDENTAL ACCOUNT</a>
+			</div>
+			<div class="col col-33">
+				<i class="icon ion-person"></i><br>
+				<a> TERMINATE RESIDENTAL ACCOUNT</a>
+			</div>
+			<div class="col col-33">
+				<i class="icon ion-flash"></i><br>
+				<a> CONSERVATION TIPS</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col col-33">
+				<i class="icon ion-information-circled"></i><br>
+				<a> TARIFF </a>
+			</div>
+			<div class="col col-33">
+				<i class="icon ion-help-circled"></i><br>
+				<a> FAQ </a>
+			</div>
+			<div class="col col-33 center">
+				<i class="icon ion-android-call"></i><br>
+				<a> CONTACT US </a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
