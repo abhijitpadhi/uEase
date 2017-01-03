@@ -5,7 +5,7 @@ var ctrl = angular.module('controllers', ['ionic']);
 
 	ctrl.controller('LoginCtrl', function($scope, $state){
 
-		var user = {
+		$scope.user = {
 			customerID: 'admin',
 			password: 'password'
 		};
