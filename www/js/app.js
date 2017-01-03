@@ -1,6 +1,6 @@
 (function(){
 
-var app = angular.module('uEase', ['ionic', 'controllers'])
+var app = angular.module('uEase', ['ionic', 'controllers', 'services'])
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,7 +27,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('main', {
       url: '/main',
       templateUrl: 'templates/main.html',
-      controller: 'MainCtrl'
+      //controller: 'MainCtrl'
     })
 
   $urlRouterProvider.otherwise('/login');

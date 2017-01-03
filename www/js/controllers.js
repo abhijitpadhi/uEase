@@ -1,35 +1,24 @@
-(function(){
+var ctrl = angular.module('controllers', []);
 
-var ctrl = angular.module('controllers', ['ionic']);
+	ctrl.controller('LoginCtrl', function($scope, LoginService, $state, $ionicPopup){
 
-
-	ctrl.controller('LoginCtrl', function($scope, $state){
-
-		$scope.user = {
-			customerID: 'admin',
-			password: 'password'
-		};
+		$scope.user = {};
 		
-		$scope.logIn =function(user){
-			console.log(user);
-			$state.go('main');
+		$scope.login =function(){
+			console.log("LOGIN user: " + $scope.user.customerID + " - PW: " + $scope.user.password);
+			
+			LoginService.loginUser($scope.user.customerID, $scope.user.password)
+				.success(function(user) {
+					$state.go('main');
+				})
+
+				.error(function(user) {
+					var alertPopup = $ionicPopup.alert(
+							{
+								title: 'Login Failed!',
+								template: 'Please check your credentials!'
+							});
+				});
 		};
 
 	});
-
-/*
-	$ionicPopup.showAlert = function(){
-		
-		var alertPopup = $ionicPopup.alert({
-			title: 'Login Alert',
-			template: 'Either email ID or password is wrong'
-		});
-
-		alertPopup.then(function(res){
-			if(!res) {
-				console.log('Either email ID or password is wrong')
-			}
-		});
-	};
-*/
-}());
